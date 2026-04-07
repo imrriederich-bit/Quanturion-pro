@@ -1,17 +1,1 @@
-{
-  "expo": {
-    "name": "quanturion",
-    "slug": "quanturion",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "userInterfaceStyle": "dark",
-    "android": {
-      "package": "com.m.riederich.quanturion"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "9d371941-aca4-41bf-9496-d0203f1e2357"
-      }
-    }
-  }
-}
+
