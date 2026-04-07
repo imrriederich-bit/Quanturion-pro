@@ -2,34 +2,24 @@
   "expo": {
     "name": "Quanturion Pro",
     "slug": "quanturion-pro",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#081122"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "android": {
-      "package": "com.quanturion.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#081122"
+        "backgroundColor": "#000000"
       },
-      "edgeToEdgeEnabled": true
-    },
-    "ios": {
-      "bundleIdentifier": "com.quanturion.app",
-      "supportsTablet": true
-    },
-    "extra": {
-      "eas": {
-        "projectId": "a63b3e0c-c8ce-414c-8110-655790a868bf"
-      }
+      "package": "com.quanturion.pro"
     }
   }
 }
