@@ -25,11 +25,16 @@
     "ios": {
       "bundleIdentifier": "com.quanturion.app",
       "supportsTablet": true
-    },
+{
+  "expo": {
+    "name": "Quanturion Pro",
+    "slug": "bitquanturion-progit",
+    "version": "2.0.0",
+
     "extra": {
       "eas": {
         "projectId": "47b5f20a-0397-40cb-aa74-91a567950037"
       }
     }
   }
-}
+    }
