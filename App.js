@@ -657,6 +657,7 @@ function Segmented({ value, options, onChange }) {
     </View>
   );
 }
+
 function openWhatsAppELITE(result, module, lang) {
   // 🔥 Lead ID erzeugen
   const leadId = "QP-" + Math.floor(10000 + Math.random() * 90000);
