@@ -754,7 +754,7 @@ Lead ID: ${leadId}
   const message = encodeURIComponent(messages[lang] || messages.de);
 
   // ⚠️ DEINE NUMMER HIER EINTRAGEN
-  const phone = "972501234567";
+  const phone = "972509101898";
 
   const url = `https://wa.me/${phone}?text=${message}`;
 
