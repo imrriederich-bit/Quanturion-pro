@@ -657,6 +657,110 @@ function Segmented({ value, options, onChange }) {
     </View>
   );
 }
+function openWhatsAppELITE(result, module, lang) {
+  // 🔥 Lead ID erzeugen
+  const leadId = "QP-" + Math.floor(10000 + Math.random() * 90000);
+
+  // 🕒 Zeitstempel
+  const now = new Date().toLocaleString();
+
+  const priority =
+    result.priorityScore >= 80
+      ? (lang === "de" ? "Hoch" : lang === "en" ? "High" : "גבוה")
+      : result.priorityScore >= 60
+      ? (lang === "de" ? "Mittel" : lang === "en" ? "Medium" : "בינוני")
+      : (lang === "de" ? "Niedrig" : lang === "en" ? "Low" : "נמוך");
+
+  const effort =
+    result.effort === "high"
+      ? (lang === "de" ? "Erweitert" : lang === "en" ? "Advanced" : "מתקדם")
+      : result.effort === "medium"
+      ? (lang === "de" ? "Standard" : lang === "en" ? "Standard" : "סטנדרטי")
+      : (lang === "de" ? "Einfach" : lang === "en" ? "Simple" : "פשוט");
+
+  const speed =
+    result.speedDays <= 7
+      ? (lang === "de" ? "7 Tage" : lang === "en" ? "7 days" : "7 ימים")
+      : result.speedDays <= 14
+      ? (lang === "de" ? "14 Tage" : lang === "en" ? "14 days" : "14 ימים")
+      : (lang === "de" ? "21 Tage" : lang === "en" ? "21 days" : "21 ימים");
+
+  const messages = {
+    de: `Hallo,
+
+ich habe über Quanturion Pro ein konkretes Einsparpotenzial identifiziert und möchte das strukturiert umsetzen.
+
+Bereich: ${module}
+Monatlicher Vorteil: ₪ ${result.monthlyPotential}
+Jährlicher Vorteil: ₪ ${result.annualPotential}
+
+Priorität: ${priority}
+Sicherheitsniveau: ${result.confidence}/100
+Umsetzungsaufwand: ${effort}
+Geschätztes Tempo: ${speed}
+
+Lead-ID: ${leadId}
+Zeit: ${now}
+Sprache: Deutsch
+
+Ich bin bereit, den nächsten Schritt zu gehen.
+
+Bitte melde dich zeitnah bei mir.`,
+
+    en: `Hello,
+
+I identified a clear financial upside via Quanturion Pro and would like to move forward.
+
+Area: ${module}
+Monthly upside: ₪ ${result.monthlyPotential}
+Annual upside: ₪ ${result.annualPotential}
+
+Priority: ${priority}
+Confidence level: ${result.confidence}/100
+Effort: ${effort}
+Estimated speed: ${speed}
+
+Lead ID: ${leadId}
+Time: ${now}
+Language: English
+
+I am ready to proceed.
+
+Please get back to me.`,
+
+    he: `שלום,
+
+זיהיתי פוטנציאל חיסכון ברור דרך Quanturion Pro ואני רוצה להתקדם.
+
+תחום: ${module}
+חודשי: ₪ ${result.monthlyPotential}
+שנתי: ₪ ${result.annualPotential}
+
+עדיפות: ${priority}
+רמת ביטחון: ${result.confidence}/100
+רמת מאמץ: ${effort}
+מהירות משוערת: ${speed}
+
+Lead ID: ${leadId}
+זמן: ${now}
+שפה: עברית
+
+אני מוכן להתקדם.
+
+אשמח שתחזרו אליי.`,
+  };
+
+  const message = encodeURIComponent(messages[lang] || messages.de);
+
+  // ⚠️ DEINE NUMMER HIER EINTRAGEN
+  const phone = "972501234567";
+
+  const url = `https://wa.me/${phone}?text=${message}`;
+
+  Linking.openURL(url).catch(() => {
+    alert("WhatsApp konnte nicht geöffnet werden");
+  });
+}
 
 export default function App() {
   const [lang, setLang] = useState("de");
