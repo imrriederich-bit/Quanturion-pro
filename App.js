@@ -881,8 +881,17 @@ export default function App() {
                   {t.monthly} · ₪ {formatCurrency(totalAnnual)} {t.annual.toLowerCase()}
                 </Text>
 
-                <TouchableOpacity style={styles.goldButton} onPress={() => setTab("roadmap")}>
-                  <Text style={styles.goldButtonText}>{t.reveal}</Text>
+                                <TouchableOpacity
+                   style={[styles.goldButton, { marginTop: 12 }]}
+                   onPress={() => openWhatsAppELITE(activeResult, labels[strongest.module], lang)}
+                >
+                  <Text style={styles.goldButtonText}>
+                   {lang === "de"
+                     ? "Jetzt Umsetzung starten (WhatsApp)"
+                   : lang === "en"
+                     ? "Start implementation (WhatsApp)"
+                     : "התחל יישום (וואטסאפ)"}
+                   </Text>
                 </TouchableOpacity>
               </View>
 
